@@ -117,7 +117,7 @@ if(art && stall && !reduce && window.matchMedia('(pointer:fine)').matches){
 // task demo clips : load from data-src, reveal + play on success
 document.querySelectorAll('.demo-vid[data-src]').forEach(function(v){
   var scr = v.closest('.scr');
-  var rate = v.classList.contains('chat-video') ? 1.2 : 1;
+  var rate = v.dataset.rate ? parseFloat(v.dataset.rate) : (v.classList.contains('chat-video') ? 1.2 : 1);
   v.loop = true;
   v.muted = true;
   v.defaultMuted = true;
